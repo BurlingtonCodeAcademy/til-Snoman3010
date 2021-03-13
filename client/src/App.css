@@ -1,38 +1,127 @@
-.App {
+/*Nav Bar Styles*/
+#nav-bar{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(134, 207, 255);
+  margin-bottom: 0;
+}
+.nav-item{
+  padding: 1rem;
+  box-shadow: inset 0.2em 0.2em 0.2em 0 rgba(255,255,255,0.5), inset -0.2em -0.2em 0.2em 0 rgba(0,0,0,0.5);
+  text-decoration: none;
+  flex-grow: 1;
   text-align: center;
+  color: rgb(94, 3, 155);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#nav-user-display{
+  
+  text-align: right;
+  flex-grow: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#nav-padding, #nav-padding-2{
+  min-width: 1rem;
+  margin-left: auto;
+  flex-grow: 7;
 }
-
-.App-header {
-  background-color: #282c34;
+/*Main Content Styles*/
+#app{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-image: linear-gradient(to top, grey, indigo 70%);
+}
+#main-content{
+  margin-top: 0;
+  background-color: rgba(243, 243, 243, 0.76);
+  flex-grow: 1;
+  padding: .2rem;
+}
+/*Editor Styles*/
+#post-editor-header{
+  margin-top: 0;
+  padding-top: 1rem;
+}
+#post-editor-form{
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr [end];
+}
+#post-editor-title{
+  height: 1.2rem;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+#post-editor-body{
+  font-family: inherit;
+  resize: none;
+  height: 5rem;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+#post-editor-public-radio-buttons{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  justify-content: space-evenly;
+}
+#post-editor-submit{
+  grid-column-start: 3;
+  grid-column-end: 4
+}
+/*Login Styles*/
+#login{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: stretch;
+  margin-left: 15%;
+}
+#login-err{
+  margin: 0;
+}
+#login input{
+  margin-top: .5rem;
+  height: 1.4rem;
+}
+#login label{
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+#login label input{
+  margin-right: .5rem;
+  margin-bottom: .4rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/*Search Styles*/
+#display-public-radio-buttons label{
+  display: flex;
+}
+#type-button-and-value-form{
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  display: flex;
+}
+#type-dropdown{
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+  width: fit-content;
+}
+#type-radio-title, #type-radio-author{
+  grid-column-start: 3;
+}
+#type-radio-content, #type-radio-tags{
+  grid-column-start: 1;
+  margin-right: 2rem;
+}
+/*Post Styles*/
+.post{
+  border-top: .2em solid black;
+}
+/*Media Queries*/
+@media only screen and (min-width: 600px){
+  #main-content{
+    width: 66%;
+    margin-left: 15%;
+    padding: 2%;
   }
 }
